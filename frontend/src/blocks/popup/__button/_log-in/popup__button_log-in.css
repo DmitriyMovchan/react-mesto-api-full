@@ -1,0 +1,12 @@
+.popup__button_log-in {
+    font-size: 14px;
+    line-height: 17px;
+    min-height: 17px;
+    background: black;
+    color:#FFFFFF;
+    border: none;
+    margin: 0;
+    padding: 0 0 80px 0;
+    text-align: center;
+    text-decoration: none;
+}

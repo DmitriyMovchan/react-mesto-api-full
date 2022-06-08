@@ -1,0 +1,16 @@
+.element__image {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    height: 282px;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 880px) {
+    .element__image {
+        min-width: 282px;
+    }
+}

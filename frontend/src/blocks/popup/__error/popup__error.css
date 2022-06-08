@@ -1,0 +1,26 @@
+.popup__error {
+    border: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    max-width: 282px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family: "Inter", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+}
+
+.popup__error:first-of-type {
+    margin-bottom: 30px;
+    max-width: 358px;
+}
+
+@media screen and (max-width: 880px) {
+    .popup__error:first-of-type {
+        max-width: 238px;
+    }
+}

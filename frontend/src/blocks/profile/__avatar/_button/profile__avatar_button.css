@@ -1,0 +1,9 @@
+.profile__avatar_button {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: none;
+    padding: 0;
+    position: relative;
+}

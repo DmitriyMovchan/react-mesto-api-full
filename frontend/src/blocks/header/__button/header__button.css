@@ -1,0 +1,15 @@
+.header__button {
+    max-width: 114px;
+    max-height: 22px;
+    margin: 6px 0 46px;
+    padding: 0;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    background-color: black;
+    text-decoration: none;
+}

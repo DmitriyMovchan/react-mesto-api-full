@@ -1,0 +1,10 @@
+.mask-group {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    padding: 25px 15px 26px 21px;
+    margin: 0;
+    max-width: 246px;
+}

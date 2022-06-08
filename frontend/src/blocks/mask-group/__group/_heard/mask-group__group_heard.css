@@ -1,0 +1,16 @@
+.mask-group__group_heard {
+    background-image: url(../../../../components/images/heard.svg);
+    background-position: center;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    min-width: 22px;
+    min-height: 19px;
+    cursor: pointer;
+    border: 0;
+    object-fit: contain;
+    background-color: white;
+}
+
+.mask-group__group_heard:hover {
+    opacity: .5;
+}

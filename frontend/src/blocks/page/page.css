@@ -1,0 +1,5 @@
+.page {
+    min-width: 100vh;
+    max-width: 1280px;
+    min-height: 100vh;
+}

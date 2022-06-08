@@ -1,0 +1,22 @@
+.profile__avatar_hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.profile__avatar_hover:hover {
+    opacity: 0.8;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../../../components/images/kursour.svg);
+    background-color: #000000;
+}
