@@ -1,6 +1,5 @@
 class Api {
-    constructor({ baseUrl, headers }) {
-        this._headers = headers
+    constructor({ baseUrl }) {
         this._baseUrl = baseUrl
     }
 
@@ -10,6 +9,13 @@ class Api {
         }
         return Promise.reject(`Ошибка ${res.status}`);
     }
+
+    _headers() {
+        return {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${localStorage.getItem('token')}`,
+        }
+      }
 
     getProfile() {
         return fetch(`${this._baseUrl}/users/me`, {
@@ -88,8 +94,5 @@ class Api {
 }
 
 export const api = new Api({
-    baseUrl: 'http://api.mesto.movchan.nomoreparties.sbs',
-    headers: {
-        'Content-Type': 'application/json'
-    }
+    baseUrl: 'http://localhost:3000',
 });
