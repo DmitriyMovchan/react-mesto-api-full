@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'http://api.mesto.movchan.nomoreparties.sbs';
 
 function checkResponse(res) {
   if (res.ok) {
@@ -13,7 +13,7 @@ function checkResponse(res) {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json;'
       },
       body: JSON.stringify({password, email})
     })
@@ -42,5 +42,4 @@ function checkResponse(res) {
       }
     })
     .then((res) => checkResponse(res))
-      
   }

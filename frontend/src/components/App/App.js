@@ -60,6 +60,7 @@ function App() {
 
     function handleUpdateUser({name, about}) {
         api.editProfile(name, about).then((res) => {
+            console.log('res', res);
             setCurrentUser(res);
             closeAllPopups()
         }).catch((err) => {
@@ -89,17 +90,18 @@ function App() {
 
     function handleCardLike(card) {
         // Снова проверяем, есть ли уже лайк на этой карточке
-        const isLiked = card.likes.some(i => i._id === currentUser._id);
+        const isLiked = card.likes.some((i) => i === currentUser._id);
         // Отправляем запрос в API и получаем обновлённые данные карточки
         api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-            setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+            // console.log(card._id)
+            setCards((state) => state.map((c) => c._id === card._id ? newCard.data : c));
         }).catch((err) => {
             console.log(err);
         });
     }
 
     function handleCardDelete(card) {
-        const isMyCard = card.owner._id === currentUser._id;
+        const isMyCard = card.owner === currentUser._id;
         if (isMyCard) api.deleteCard(card._id).then(() => {
             setCards((state) => state.filter((x) => x._id !== card._id))
         }).catch((err) => {
@@ -116,13 +118,25 @@ function App() {
             history.push('/');
             Promise.all([api.getInitialCards(), api.getProfile()])
                 .then(([cardInfo, userInfo]) => {
-                    setCards(cardInfo);
+                    setCards(cardInfo.reverse());
                     setCurrentUser(userInfo);
+                    // console.log(userInfo)
                 })
                 .catch((err) => console.log(err))
                 return
         }
     }, [loggedIn])
+
+    React.useEffect(() => {
+        const closeByEscape = (e) => {
+          if (e.key === 'Escape') {
+            closeAllPopups();
+          }
+        }
+        document.addEventListener('keydown', closeByEscape)
+        //!!clean up функция через return
+        return () => document.removeEventListener('keydown', closeByEscape)
+    }, [])
 
     const handleLogin = (password, email) => {
         return authorize(email, password)
@@ -152,7 +166,6 @@ function App() {
             })
             .catch(() => setNotification(false))
             .finally(() => {
-                console.log('qqq')
                 setInfoToolOpen(true)
             })
     }
@@ -164,8 +177,9 @@ function App() {
             .then((res) => {
                 if (res){
                     setUserData({
-                        email: res.data.email
+                        email: res.email,
                     });
+                    console.log(res)
                     setLoggedIn(true);
                 }
             });

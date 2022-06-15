@@ -10,7 +10,7 @@ class Api {
         return Promise.reject(`Ошибка ${res.status}`);
     }
 
-    _headers() {
+    get _headers() {
         return {
           'Content-Type': 'application/json',
           authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -94,5 +94,5 @@ class Api {
 }
 
 export const api = new Api({
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://api.mesto.movchan.nomoreparties.sbs',
 });

@@ -110,7 +110,7 @@ const updateAvatar = (req, res, next) => {
     throw new NotFoundError('Переданы некорректные данные');
     // return res.status(400).send({ message: 'Переданы некорректные данные' });
   }
-  User.findByIdAndUpdate(req.user._id, { avatar }, { new: true, runValidators: true })
+  User.findByIdAndUpdate(req.user, { avatar }, { new: true, runValidators: true })
     .then((user) => res.status(200).send({ data: user }))
     // eslint-disable-next-line consistent-return
     .catch((err) => {
