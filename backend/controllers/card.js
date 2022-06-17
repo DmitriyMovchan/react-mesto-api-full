@@ -22,7 +22,7 @@ const createCard = (req, res, next) => {
 
   Card.create({ name, link, owner })
     .then((card) => {
-      res.status(201).send({ card });
+      res.status(201).send(card);
     })
     // eslint-disable-next-line consistent-return
     .catch((err) => {
