@@ -27,7 +27,7 @@ function Main(props) {
             props.cards.map(item => {
                 return(
                 <Card
-                key={item}
+                key={item._id}
                 card={item}
                 onClick={props.onCardClick}
                 onCardLike={props.onCardLike}

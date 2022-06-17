@@ -16,9 +16,9 @@ function Header(props) {
                         </div> 
                     </Route>
                     <Route path="/sign-in">
-                        <Link to="sign-up" className="header__button">Регистрация</Link>
+                        <Link to="signup" className="header__button">Регистрация</Link>
                     </Route>
-                    <Route path="/sign-up">
+                    <Route path="/signup">
                         <Link to="sign-in" className="header__button">Вход</Link>
                     </Route>
                 </Switch>
