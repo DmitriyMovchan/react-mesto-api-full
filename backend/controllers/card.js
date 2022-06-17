@@ -73,7 +73,7 @@ const putLike = (req, res, next) => {
         next(new NotFoundError('Переданы некорректные данные'));
         // return res.status(404).send({ message: 'некорректный id карточки.' });
       }
-      res.status(200).send({ card });
+      res.status(200).send(card);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
@@ -94,7 +94,7 @@ const deleteLike = (req, res, next) => {
         throw new NotFoundError('Переданы некорректные данные');
         // return res.status(404).send({ message: 'некорректный id карточки' });
       }
-      res.status(200).send({ card });
+      res.status(200).send(card);
     })
     // eslint-disable-next-line consistent-return
     .catch((err) => {
