@@ -5,7 +5,6 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 
 function Main(props) {
-    console.log('mmmain')
 
     const currentUser = React.useContext(CurrentUserContext);  
     

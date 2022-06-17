@@ -60,8 +60,8 @@ function App() {
 
     function handleUpdateUser({name, about}) {
         api.editProfile(name, about).then((res) => {
-            console.log('res', res);
-            setCurrentUser(res);
+            console.log('res', res.data);
+            setCurrentUser(res.data);
             closeAllPopups()
         }).catch((err) => {
             console.log(err);
@@ -81,7 +81,7 @@ function App() {
     function handleUpdateAvatar({avatar}) {
         api.updateAvatar(avatar).then((res) => {
             console.log('res', res)
-            setCurrentUser(res);
+            setCurrentUser(res.data);
             closeAllPopups()
         }).catch((err) => {
             console.log(err);
@@ -93,8 +93,8 @@ function App() {
         const isLiked = card.likes.some((i) => i === currentUser._id);
         // Отправляем запрос в API и получаем обновлённые данные карточки
         api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-            // console.log(card._id)
-            setCards((state) => state.map((c) => c._id === card._id ? newCard.data : c));
+            //console.log(newCard)
+            setCards((state) => state.map((c) => c._id === card._id ? newCard.message : c));
         }).catch((err) => {
             console.log(err);
         });
@@ -179,7 +179,7 @@ function App() {
                     setUserData({
                         email: res.email,
                     });
-                    console.log(res)
+                    // console.log(res)
                     setLoggedIn(true);
                 }
             });
