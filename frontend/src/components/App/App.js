@@ -19,8 +19,6 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import success from '../images/success.svg';
 import fail from '../images/fail.svg';
 
-
-
 function App() {
     const [isEditProfilePopupOpen, setEditProfilePopupOpen] = React.useState(false);
     const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] =React.useState(false);

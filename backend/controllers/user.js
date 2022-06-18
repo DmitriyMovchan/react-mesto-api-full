@@ -36,8 +36,8 @@ const createUser = (req, res, next) => {
   const {
     name, about, avatar, password, email,
   } = req.body;
-  // if (!password || !email) {
-  //   throw new NotFoundError('Переданы некорректные данные');
+  if (!password || !email) {
+    throw new NotFoundError('Переданы некорректные данные');
     // return res.status(400).send({ message: 'Переданы некорректные данные' });
   }
   bcrypt.hash(password, saltRounds)
