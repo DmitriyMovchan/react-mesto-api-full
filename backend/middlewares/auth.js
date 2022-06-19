@@ -4,7 +4,6 @@ const { UnauthorizedError } = require('../errors/UnauthorizedError');
 
 const { NODE_ENV, JWT_SECRET_KEY } = process.env;
 
-// const JWT_SECRET_KEY = '1234567890';
 const generateToken = (payload) => jwt.sign(payload, JWT_SECRET_KEY, { expiresIn: '7d' });
 
 const isAuthorized = (req, res, next) => {
