@@ -94,5 +94,5 @@ class Api {
 }
 
 export const api = new Api({
-    baseUrl: 'http://api.mesto.movchan.nomoreparties.sbs',
+    baseUrl: 'https://api.mesto.movchan.nomoreparties.sbs',
 });
